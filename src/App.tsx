@@ -7,6 +7,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePage />,
   },
+  {
+    path: "/topic/:id",
+    element: 'insert topic component here'
+  }
 ]);
 
 function App() {

@@ -1,4 +1,5 @@
 import { Divider, List } from "antd";
+import { Link } from "react-router-dom";
 const topicList = [
   {
     id: 0,
@@ -23,7 +24,13 @@ export const HomePage = () => (
     <List
       bordered
       dataSource={topicList}
-      renderItem={(item) => <List.Item>{item.title}</List.Item>}
+      renderItem={(topic) => (
+        <Link to={`/topic/${topic.id}`}>
+          <List.Item>
+            {topic.title}
+          </List.Item>
+        </Link>
+      )}
     />
   </div>
 );
