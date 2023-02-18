@@ -1,4 +1,4 @@
-import { Divider, List } from "antd"; 
+import { Divider, List } from "antd";
 const topicList = [
   {
     id: 0,
