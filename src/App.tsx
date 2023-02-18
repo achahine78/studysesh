@@ -9,8 +9,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/topic/:id",
-    element: 'insert topic component here'
-  }
+    element: "insert topic component here",
+  },
 ]);
 
 function App() {

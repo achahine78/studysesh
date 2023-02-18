@@ -26,9 +26,7 @@ export const HomePage = () => (
       dataSource={topicList}
       renderItem={(topic) => (
         <Link to={`/topic/${topic.id}`}>
-          <List.Item>
-            {topic.title}
-          </List.Item>
+          <List.Item>{topic.title}</List.Item>
         </Link>
       )}
     />
