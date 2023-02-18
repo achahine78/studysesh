@@ -1,40 +1,18 @@
-import { Divider, List } from 'antd';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { HomePage } from './HomePage';
 import './App.css'
 
-const topicList = [
+const router = createBrowserRouter([
   {
-    id: 0,
-    title: 'Topic 1'
+    path: "/",
+    element: <HomePage />,
   },
-  {
-    id: 1,
-    title: 'Topic 2'
-  },
-  {
-    id: 2,
-    title: 'Topic 3'
-  },
-  {
-    id: 3,
-    title: 'Topic 4'
-  }
-];
+]);
 
 function App() {
 
   return (
-    <div className="App">
-    <Divider orientation="left">Topic List</Divider>
-    <List
-      bordered
-      dataSource={topicList}
-      renderItem={(item) => (
-        <List.Item>
-          {item.title}
-        </List.Item>
-      )}
-    />
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
