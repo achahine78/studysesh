@@ -1,5 +1,6 @@
-import { Card, Typography } from "antd";
-import { useParams } from "react-router-dom";
+import { Card, Collapse, Typography } from "antd";
+import { useState } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const questionsList = [
   {
@@ -22,14 +23,35 @@ const questionsList = [
   },
 ];
 
+type Question = {
+  id: number;
+  question: string;
+  answer: string;
+  isCorrectlyAnswered: boolean;
+};
+
+type QuestionCardProps = {
+  question: Question;
+};
+
+const QuestionCard = ({ question }: QuestionCardProps) => {
+  return (
+    <Card title={question.question} bordered={false} style={{ width: 300 }}>
+      <Collapse bordered={false}>
+        <Collapse.Panel header={<b>Answer</b>} key="1">
+          {question.answer}
+        </Collapse.Panel>
+      </Collapse>
+    </Card>
+  );
+};
+
 export const Topic = () => {
   const { id } = useParams();
   return (
     <div className="App">
       {questionsList.map((question) => (
-        <Card title={question.question} bordered={false} style={{ width: 300 }}>
-          <p>{question.answer}</p>
-        </Card>
+        <QuestionCard question={question} />
       ))}
     </div>
   );
