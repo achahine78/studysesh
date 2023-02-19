@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./HomePage";
 import "./App.css";
+import { Topic } from "./Topic";
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/topic/:id",
-    element: "insert topic component here",
+    element: <Topic />,
   },
 ]);
 
