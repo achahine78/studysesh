@@ -4,42 +4,19 @@ import { useParams } from "react-router-dom";
 const questionsList = [
   {
     id: 0,
-    title: "What is the output?",
-    body: `
-      function sayHi() {\n
-        \treturn (() => 0)();\n
-      }\n
-      \n
-      console.log(typeof sayHi());\n
-    `,
+    question: "What is the output?",
     answer: "number",
     isCorrectlyAnswered: false,
   },
   {
     id: 1,
-    title: "What is the output?",
-    body: `
-      function getAge(...args) {
-        console.log(typeof args);
-      }
-      
-      getAge(21);
-    `,
+    question: "What is the output?",
     answer: "array",
     isCorrectlyAnswered: false,
   },
   {
     id: 2,
-    title: "What is the output?",
-    body: `
-      function getAge() {
-        'use strict';
-        age = 21;
-        console.log(age);
-      }
-      
-      getAge();
-    `,
+    question: "What is the output?",
     answer: "ReferenceError",
     isCorrectlyAnswered: false,
   },
@@ -50,8 +27,7 @@ export const Topic = () => {
   return (
     <div className="App">
       {questionsList.map((question) => (
-        <Card title={question.title} bordered={false} style={{ width: 300 }}>
-          <Typography.Paragraph code>{question.body}</Typography.Paragraph>
+        <Card title={question.question} bordered={false} style={{ width: 300 }}>
           <p>{question.answer}</p>
         </Card>
       ))}
